@@ -1,6 +1,8 @@
 package com.aurghyadip.kotlinfirstapp.Adapter
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.support.constraint.R.id.parent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -38,6 +40,7 @@ class FeedViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.O
 
     override fun onLongClick(v: View?): Boolean {
         itemClickListener!!.onClick(v, adapterPosition, true)
+        return true
     }
 
 }
@@ -59,6 +62,13 @@ class FeedAdapter(private val rssFeed: RssFeed, private val mContext: Context):R
         holder.txtTitle.text = rssFeed.items[position].title
         holder.txtPubDate.text = rssFeed.items[position].pubDate
         holder.txtContent.text = rssFeed.items[position].content
+
+        holder.setItemClickListener(ItemClickListener {view, position, isLongClick ->
+            if(!isLongClick) {
+                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(rssFeed.items[position].link))
+                mContext.startActivity(browserIntent);
+            }
+        })
     }
 
 }
