@@ -1,4 +1,4 @@
-package com.aurghyadip.kotlinfirstapp.Model
+package com.aurghyadip.kotlinfirstapp.model
 
 data class Enclosure(
         val link: String

@@ -1,4 +1,4 @@
-package com.aurghyadip.kotlinfirstapp.Adapter
+package com.aurghyadip.kotlinfirstapp.adapter
 
 import android.content.Context
 import android.content.Intent
@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.aurghyadip.kotlinfirstapp.Interface.ItemClickListener
-import com.aurghyadip.kotlinfirstapp.Model.RssFeed
+import com.aurghyadip.kotlinfirstapp.model.RssFeed
 import com.aurghyadip.kotlinfirstapp.R
 
 class FeedViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener, View.OnLongClickListener {
