@@ -1,7 +1,5 @@
 package com.aurghyadip.kotlinfirstapp
 
-import android.app.ProgressDialog
-import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -9,7 +7,6 @@ import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.aurghyadip.kotlinfirstapp.Adapter.FeedAdapter
-import com.aurghyadip.kotlinfirstapp.Model.Feed
 import com.aurghyadip.kotlinfirstapp.Model.RssFeed
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*

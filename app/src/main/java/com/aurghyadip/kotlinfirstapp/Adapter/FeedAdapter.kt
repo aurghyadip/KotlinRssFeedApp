@@ -2,8 +2,8 @@ package com.aurghyadip.kotlinfirstapp.Adapter
 
 import android.content.Context
 import android.content.Intent
+import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.net.Uri
-import android.support.constraint.R.id.parent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -66,7 +66,8 @@ class FeedAdapter(private val rssFeed: RssFeed, private val mContext: Context):R
         holder.setItemClickListener(ItemClickListener {view, position, isLongClick ->
             if(!isLongClick) {
                 val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(rssFeed.items[position].link))
-                mContext.startActivity(browserIntent);
+                browserIntent.flags = FLAG_ACTIVITY_NEW_TASK
+                mContext.startActivity(browserIntent)
             }
         })
     }
