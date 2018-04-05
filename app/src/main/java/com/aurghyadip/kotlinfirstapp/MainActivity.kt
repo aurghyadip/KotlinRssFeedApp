@@ -18,20 +18,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         toolbar.title ="NEWS"
-        setSupportActionBar(toolbar);
-
-        var rssFeed :RssFeed;
+        setSupportActionBar(toolbar)
 
         val linearLayoutManager = LinearLayoutManager(baseContext, LinearLayoutManager.VERTICAL, false)
         recyclerView.layoutManager = linearLayoutManager
 
         val request = StringRequest(url, Response.Listener {
-            rssFeed = Gson().fromJson<RssFeed>(it, RssFeed::class.java)
+            val rssFeed = Gson().fromJson<RssFeed>(it, RssFeed::class.java)
             recyclerView.adapter = FeedAdapter(rssFeed, baseContext)
         }, Response.ErrorListener {
 
         })
-
         val queue = Volley.newRequestQueue(this)
         queue.add(request)
     }
